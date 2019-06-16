@@ -1,2 +1,5 @@
-class ApplicationJob < ActiveJob::Base
+class ApplicationJob
+  include Sidekiq::Worker
+
+  sidekiq_options backtrace: true
 end
